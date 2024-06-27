@@ -12,7 +12,7 @@ https://abdn.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c3d90ea0-6f46-4c2d-a6
 
 ![image-20240609202938036](https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609202938036.png)
 
-https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609185839325.png
+
 
 ## Install Required Packages
 
@@ -54,7 +54,7 @@ There are 2 version of our software:
 
 In this part, user can change their story background of each motifs, which offered a more playable and creative user experience. Increase our software has a lot of extensibility.
 
-![image-20240609201910860](C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20240609201910860.png)
+![image-20240609201910860](https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609201910860.png)
 
 
 
@@ -68,7 +68,7 @@ python app_version1.py
 
 
 
-![image-20240609185839325](C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20240609185839325.png)
+![image-20240609185839325](https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609185839325.png)
 
 
 
@@ -76,7 +76,7 @@ Now, you can open your web browser and by going to  the second row  IP address: 
 
 
 
-![image-20240609195950433](C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20240609195950433.png)
+![image-20240609195950433](https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609195950433.png)
 
 By enter the IP address you can access our software home page.
 
