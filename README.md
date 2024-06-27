@@ -10,9 +10,9 @@ https://abdn.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c3d90ea0-6f46-4c2d-a6
 
 ## Overview of Structure 
 
-![image-20240609202938036](C:\Users\86132\AppData\Roaming\Typora\typora-user-images\image-20240609202938036.png)
+![image-20240609202938036](https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609202938036.png)
 
-
+https://github.com/HugoLee99/Text_Advanture_base_gpt3.5_finetune/blob/main/image/image-20240609185839325.png
 
 ## Install Required Packages
 
