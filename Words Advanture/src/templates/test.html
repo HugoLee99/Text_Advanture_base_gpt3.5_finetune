@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAT PAGE</title>
+    <link rel="stylesheet" type="text/css" href="../static/assets/style.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../static/assets/img/brand/favicon.png" type="image/png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../static/assets/libs/@fortawesome/fontawesome-free/css/all.min.css">
+    <!-- Quick CSS -->
+    <link rel="stylesheet" href="../static/assets/css/quick-website.css" id="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            background-color: rgb(35, 33, 33);
+            overflow: hidden; /* Disable body scrolling */
+        }
+        .mainbody {
+            width: 100%;
+            height: calc(100vh - 160px);
+            position: relative;
+            top: -30px;
+            background: none;
+            overflow-y: auto;
+            border: 0;
+            box-shadow: none;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        .mainbody::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari, and Opera */
+        }
+        .message {
+            font-size: 25px;
+            font-family: High Tower Text;
+            color: white;
+            padding: 10px;
+            word-wrap: break-word; /* Ensure long words break to the next line */
+            word-break: break-all; /* Ensure long words break to the next line */
+            width: 760px;
+        }
+    </style>
+</head>
+<body class="slice py-7">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" style="background-color: black; color: black; position: fixed; top: 0; width: 99%; height: 55px;">
+        <div class="container" style="background: white; height: 55px;">
+            <!-- Brand -->
+            <a class="navbar-brand" style="position: relative; top: 8px;" href="">
+                <p style="font-size: 30px; color: black; font-weight: 700; font-family: High Tower Text; line-height: 55px;">Words Adventure</p>
+            </a>
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mt-4 mt-lg-0 ml-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/">Overview</a>
+                    </li>
+                </ul>
+                <!-- Button -->
+                <a class="navbar-btn btn btn-sm btn-primary d-none d-lg-inline-block ml-3" style="color: white;">
+                    Play Now！
+                </a>
+            </div>
+        </div>
+    </nav>
+                1.Stranded Deep&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.Zombie Crisis&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.Magic World. </p>
+        </div>
+    <div class="mainbody" id="mainbody">
+        <div id="reply" style="color: white; padding: 10px; position: relative; left: 340px; width: 890px;">
+            <!-- Messages will be appended here -->
+            <p class="message" style="font-size: 35px;">
+                Choose a motif to start your adventure: </p>
+            <p class="message">
+        <!-- 发送栏 -->
+        <div style="height: 80px; width: 890px; position: fixed; left: 340px; bottom: 25px; background-color: none;" id="senddiv">
+            <div class="chat" style="height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 15px;">
+                <input type="text" class="chat" style="flex-grow: 1; height: 50px; border-radius: 10px; border: 0px; margin-right: 15px; font-size: 30px;" id="message" name="message" placeholder="Enter your choice or type quit:">
+                <button id="send" onclick="sendMessage()" style="width: 100px; height: 50px; border-radius: 10px; border: 0px; font-size: 20px;">SEND</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function sendMessage() {
+            const messageInput = document.getElementById('message');
+            const message = messageInput.value;
+            const sendButton = document.getElementById('send');
+
+            if (message.trim() === '') {
+                alert('Please enter a message.');
+                return;
+            }
+
+            // 禁用发送按钮
+            sendButton.disabled = true;
+
+            const replyBox = document.getElementById('reply');
+            const mainbody = document.getElementById('mainbody');
+
+            // 如果内容超出容器高度，滚动到底部
+            const scrollPosition = mainbody.scrollHeight - mainbody.clientHeight - 100;
+            if (mainbody.scrollTop >= scrollPosition) {
+                mainbody.scrollTop = mainbody.scrollHeight;
+            }
+            // 显示用户输入的消息
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message';
+            userMessage.innerHTML = `<strong>You:</strong> ${message}`;
+            replyBox.appendChild(userMessage);
+
+            // 如果内容超出容器高度，滚动到底部
+            if (mainbody.scrollTop >= scrollPosition) {
+                mainbody.scrollTop = mainbody.scrollHeight;
+            }
+            // 清空输入框
+            messageInput.value = '';
+
+            // 在 replyBox 中插入 "Waiting Response" 提示
+            const waitingMessage = document.createElement('div');
+            waitingMessage.className = 'message';
+            waitingMessage.innerText = 'Waiting Response...';
+            replyBox.appendChild(waitingMessage);
+
+            // 如果内容超出容器高度，滚动到底部
+            if (mainbody.scrollHeight > mainbody.clientHeight) {
+                mainbody.scrollTop = mainbody.scrollHeight;
+            }
+
+            const response = await fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: message })
+            });
+
+            const data = await response.json();
+            const formattedReply = data.reply.replace(/\n/g, '<br>');
+            // 移除 "Waiting Response" 提示
+            replyBox.removeChild(waitingMessage);
+
+            // 添加响应消息到 replyBox
+            const aiMessage = document.createElement('div');
+            aiMessage.className = 'message';
+            aiMessage.innerHTML = `<strong>AI:</strong> ${formattedReply}`;
+            replyBox.appendChild(aiMessage);
+
+            // 在每轮对话后插入一个空的 div 以生成空行
+            const spacer = document.createElement('div');
+            spacer.style.height = '20px';
+            replyBox.appendChild(spacer);
+
+            // 再次检查是否需要滚动
+            if (mainbody.scrollHeight > mainbody.clientHeight) {
+                mainbody.scrollTop = mainbody.scrollHeight;
+            }
+
+            // 启用发送按钮
+            sendButton.disabled = false;
+        }
+    </script>
+</body>
+</html>

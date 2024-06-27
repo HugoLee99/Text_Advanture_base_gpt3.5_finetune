@@ -1,0 +1,367 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #ffbdc9;
+}
+/* 顶部导航 */
+.navigation {
+    background-color: white;
+    display: flex;
+    width: 1299px;
+    height: 50px;
+    position: absolute;
+    right: 109px;
+
+    border: 1px solid black;
+
+    left: auto;
+
+    border-radius: 10px;
+
+    
+}
+#box1,#box2,#box3{
+    padding: 0;
+    position: relative;
+    width: 433px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 999;
+}
+
+#block1{
+    padding: 0;
+    width: 433px;
+    height: 51px;
+    background-color:none;
+    position: absolute;
+    top: 20px;
+    z-index: 990;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+#block2{
+    left: 433px;
+    padding: 0;
+    width: 433px;
+    height: 50px;
+    background-color:none;
+    position: absolute;
+    top: 20px;
+    z-index: 990;
+    border-radius: 10px;
+    transition: all 0.2s;
+
+}
+#block3{
+    left: 866px;
+    padding: 0;
+    width: 433px;
+    height: 50px;
+    background-color:none;
+    position: absolute;
+    top: 20px;
+    z-index: 990;
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+/* 主体部分 mainbody */
+.mainbody {
+    margin: 0 auto;
+    width: 1300px;
+    height: 2500px;
+    box-shadow: 1px 1px 2px grey;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    background-color: white;
+    background-image: url(image/background.jpg);
+    background-size: cover;
+    background-position: center ;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 60px;
+    border-radius: 10px;
+}
+
+/* 顶部通栏 */
+#topbar {
+    width: 1300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: black;
+
+    transition: top .5s linear;
+
+    border-radius: 7px;
+
+
+    position: fixed;
+    top: -80px;
+    left: 50;
+    background-color: white;
+
+    z-index: 999;
+}
+#box4,#box5,#box6{
+    padding: 0;
+    position: relative;
+    width: 433px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    z-index: 999;
+}
+#block4{
+    left: 109px;
+    padding: 0;
+    width: 433px;
+    height: 50px;
+    background-color:none;
+    position: fixed;
+    top: -80px;
+    z-index: 990;
+    border-radius: 10px;
+    transition: all 0.2s;
+    z-index: 1;
+}
+#block5{
+    left: 542px;
+    padding: 0;
+    width: 433px;
+    height: 50px;
+    background-color:none;
+    position: fixed;
+    top: -80px;
+    z-index: 990;
+    border-radius: 10px;
+    transition: all 0.2s;
+    z-index: 1;
+}
+#block6{
+    left: 975px;
+    padding: 0;
+    width: 433px;
+    height: 50px;
+    background-color:none;
+    position: fixed;
+    top: -80px;
+    z-index: 990;
+    border-radius: 10px;
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+/* 个人主页部分 */
+.maininfo {
+    width: 100%;
+    height: 300px;
+    background-image: url(image/maininfo.jpg);
+    background-size: cover;
+    display: flex;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 1px 5px gray;
+}
+
+/* Maxtuu */
+#Maxtuu{
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    top: 60px;
+    left: 360px;
+    float: left;
+    font-size: 150px;
+    text-align: center;
+    line-height: 200px;
+    font-family:Snap ITC;
+    color: black;
+    text-shadow: 10px -20px 10px white;
+}
+
+/* 头像 profile */
+#iprofile {
+    width: 172px;
+    height: 172px;
+    position: absolute;
+    top: 65px;
+    left: 110px;
+    background-color: red;
+    border-radius: 86px;
+    background-image: url(image/profile.jpg);
+    background-size: cover;
+    border: 3px solid orange;
+}
+
+.nameandothers{
+    width: 500px;
+    height: 50px;
+    font-family: High Tower Text;
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+div>p{
+    text-align: justify;
+    font-size: 14px;
+}
+#picture{
+    width: 1300px;
+    height: 2500px;
+    position: relative;
+    display: flex;
+}
+
+#picture img{
+    z-index: 998;
+    box-shadow: 2px 2px 10px grey;
+}
+
+/* hr */
+.decoration{
+    display: inline-block;
+    border: none;
+
+    border: none;
+    border-top: 2px solid black; /* 将实线边框改为虚线边框 */
+    position:absolute;
+    z-index: 1;
+
+}
+
+/* 选项卡选项部分 */
+#options{
+    position: absolute;
+    top: 0px;
+    width: 1300px;
+    height: 50px;
+    background-color: white;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    /* border:1px solid black; */
+    z-index: 999999;
+    border-bottom: 1px solid black;
+}
+#options>div{
+    width: 434px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 25px;
+    transition: all 0.2s;
+    font-weight: 700;
+}
+#option1,#option2,#option3{
+    z-index: 999;
+}
+
+#block7,#block8,#block9{
+    position: absolute;
+    width: 433px;
+    height: 50px;
+    background-color: none;
+    top: 20px;
+    transition: all 0.2s;
+    z-index: 1;
+}
+#block8{
+    left: 433px;
+}
+#block9{
+    left: 866px;
+}
+
+#info1{
+    width: 1300px;
+    height: 1500px;
+    display: flex;
+    position: absolute;
+    top: 51px;
+}
+
+#major,#hobby,#life{
+    top: 50px;
+    width: 1300px;
+    height: 1150px;
+    position: absolute;
+}
+#major{
+    display: block;
+}
+
+/* major left part */
+#left{
+    float: left;
+    width: 592px;
+    height: 1250px;
+    /* background-color: rgb(1,176 ,241); */
+    border-bottom-left-radius: 7px;
+    border-right: 2px solid gray;
+}
+#profile{
+    background-image: url(image/major.png);
+    background-size: cover;
+    background-position: center;
+    width: 230px;
+    height:230px;
+    border-radius: 50%;
+    border:3px solid white;
+    position: absolute;
+    top: 40px;
+    left: 170px;
+}
+#big{
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    text-shadow: 2px 0px 2px black;
+    top:290px;
+    left: 120px;
+    font-family: High Tower Text;
+}
+.small{
+    padding: 10px 20px;
+    color: rgb(105, 97, 97);
+    position: absolute;
+    width: 500px;
+    top: 370px;
+    left: 25px;
+}
+.small>p{
+    font-size: 25px;
+    font-weight: 700;
+    font-family: High Tower Text;
+}
+.dashed{
+    width: 591px;
+    position: absolute;
+}
+#right{
+    width: 707px;
+    height: 1300px;
+    position: absolute;
+    left: 593px;
+}
+
+#hobby{
+
+    display: none;
+}
+
+.message {
+    font-size: 200px;
+    font-family: 'Times New Roman', Times, serif;
+}
