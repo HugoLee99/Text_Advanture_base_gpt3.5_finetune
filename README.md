@@ -80,7 +80,7 @@ Now, you can open your web browser and by going to  the second row  IP address: 
 
 By enter the IP address you can access our software home page.
 
-## Trello is used to manage the project processing, recording teams develop log and contribution of each team member:
+## Trello is used to manage the project, recording team's development log and contribution of each team member:
 [https://trello.com/b/Ea5aU5kK/intelligent-software-project-kanban](https://trello.com/b/Ea5aU5kK)
 
 
